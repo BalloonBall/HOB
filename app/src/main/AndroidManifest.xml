@@ -18,15 +18,12 @@
 
         <activity
             android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.login.SignInActivity"
-            android:label="@string/title_activity_sign_in"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StartingActivity"
-            android:label="@string/title_activity_starting"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".LoadingActivity"
