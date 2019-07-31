@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.slidingpanelayout.widget.SlidingPaneLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A2B52"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/menuNavi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menuTop"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#405166"
+            android:layout_weight="2.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/emailPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/email_photo" />
+
+            <TextView
+                android:id="@+id/menuWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/welcome"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/emailPhoto"
+                app:layout_constraintTop_toTopOf="@+id/emailPhoto" />
+
+            <TextView
+                android:id="@+id/menuUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:text="@string/menuUsername"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toBottomOf="@+id/emailPhoto"
+                app:layout_constraintStart_toStartOf="@+id/menuWelcome"
+                app:layout_constraintTop_toBottomOf="@+id/menuWelcome"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/bg_menu_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_menu_bar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/emailPhoto"
+                app:layout_constraintVertical_bias="1.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#FFFFFF"
+            android:layout_weight="7.5">
+
+            <ListView
+                android:id="@+id/menuListView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="48dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+            </ListView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txWelcome"
+                android:layout_width="210dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/welcome_2_HOB"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="36sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgSearchBar" />
+
+            <ImageButton
+                android:id="@+id/btMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="18dp"
+                android:background="#00FFFFFF"
+                android:onClick="slideOpen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bt_menu" />
+
+            <ImageView
+                android:id="@+id/bgSearchBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/logo2"
+                app:layout_constraintStart_toEndOf="@+id/btMenu"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_searchbar" />
+
+            <ImageButton
+                android:id="@+id/logo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="24dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintEnd_toStartOf="@+id/btMore"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/logo2" />
+
+            <ImageButton
+                android:id="@+id/btMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="16dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bt_more" />
+
+            <ImageView
+                android:id="@+id/bgBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_bar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txWelcome" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1300dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgBar"
+                app:srcCompat="@drawable/bg_bar" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/accounts"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:animateLayoutChanges="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgBar">
+
+                <ImageView
+                    android:id="@+id/bgAccount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/myAccount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/account_balance"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="@+id/bgAccount"
+                    app:layout_constraintTop_toTopOf="@+id/bgAccount" />
+
+                <ImageButton
+                    android:id="@+id/moreAccount"
+                    android:layout_width="20dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bt_down"
+                    android:onClick="moreAccount"
+                    app:layout_constraintStart_toEndOf="@+id/myAccount"
+                    app:layout_constraintTop_toTopOf="@+id/myAccount" />
+
+                <ImageView
+                    android:id="@+id/bankAC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@+id/bgAccount"
+                    app:layout_constraintTop_toBottomOf="@+id/myAccount"
+                    app:srcCompat="@drawable/bank_ac" />
+
+                <ImageView
+                    android:id="@+id/balanceAC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="64dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/bankAC"
+                    app:layout_constraintEnd_toEndOf="@+id/bgAccount"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/bankAC"
+                    app:srcCompat="@drawable/balance_ac" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/hiddenAccount"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginEnd="0dp"
+                    android:onClick="moreAccount"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bgAccount">
+
+                    <ImageView
+                        android:id="@+id/bgAccountBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_account_box"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/hiddenAccount" />
+
+                    <ImageView
+                        android:id="@+id/bgAccountBox1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/bg_account_box"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/bgAccountBox" />
+
+                    <ImageView
+                        android:id="@+id/bankSaver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/bgAccountBox"
+                        app:layout_constraintTop_toTopOf="@+id/bgAccountBox"
+                        app:srcCompat="@drawable/bank_saver" />
+
+                    <ImageView
+                        android:id="@+id/balanceSaver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/bankSaver"
+                        app:layout_constraintEnd_toEndOf="@+id/bgAccountBox"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/bankSaver"
+                        app:srcCompat="@drawable/balance_saver" />
+
+                    <ImageView
+                        android:id="@+id/bankLoan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintStart_toStartOf="@+id/bgAccountBox1"
+                        app:layout_constraintTop_toTopOf="@+id/bgAccountBox1"
+                        app:srcCompat="@drawable/bank_loan" />
+
+                    <ImageView
+                        android:id="@+id/balanceLoan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="64dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/bankLoan"
+                        app:layout_constraintEnd_toEndOf="@+id/bgAccountBox1"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/bankLoan"
+                        app:srcCompat="@drawable/balance_loan" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:stretchColumns="*"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/accounts">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bt_manage_asset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="405dp">
+
+                        <ImageView
+                            android:id="@+id/bg_manage_asset"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/bt_tag_box"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/icon_manage_asset"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/icon_asset"
+                            app:layout_constraintBottom_toBottomOf="@+id/bg_manage_asset"
+                            app:layout_constraintStart_toStartOf="@+id/bg_manage_asset"
+                            app:layout_constraintTop_toTopOf="@+id/bg_manage_asset"
+                            app:layout_constraintVertical_bias="0.50" />
+
+                        <TextView
+                            android:id="@+id/tx_manage_asset"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/manage_asset"
+                            android:textColor="#F7FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_manage_asset"
+                            app:layout_constraintStart_toEndOf="@+id/icon_manage_asset"
+                            app:layout_constraintTop_toTopOf="@+id/icon_manage_asset" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bt_flex_saver"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:background="@drawable/bt_tag_box"
+                        tools:layout_editor_absoluteX="212dp"
+                        tools:layout_editor_absoluteY="405dp">
+
+                        <ImageView
+                            android:id="@+id/bg_flex_saver"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/bt_tag_box"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/icon_flex_saver"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/icon_saver"
+                            app:layout_constraintBottom_toBottomOf="@+id/bg_flex_saver"
+                            app:layout_constraintStart_toStartOf="@+id/bg_flex_saver"
+                            app:layout_constraintTop_toTopOf="@+id/bg_flex_saver"
+                            app:layout_constraintVertical_bias="0.50" />
+
+                        <TextView
+                            android:id="@+id/tx_flex_saver"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/flex_saver"
+                            android:textColor="#F7FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_flex_saver"
+                            app:layout_constraintStart_toEndOf="@+id/icon_flex_saver"
+                            app:layout_constraintTop_toTopOf="@+id/icon_flex_saver" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="16dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bt_invest_fund"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/bt_tag_box"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="405dp">
+
+                        <ImageView
+                            android:id="@+id/bg_invest_fund"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/bt_tag_box"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/icon_invest_fund"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/icon_fund"
+                            app:layout_constraintBottom_toBottomOf="@+id/bg_invest_fund"
+                            app:layout_constraintStart_toStartOf="@+id/bg_invest_fund"
+                            app:layout_constraintTop_toTopOf="@+id/bg_invest_fund"
+                            app:layout_constraintVertical_bias="0.50" />
+
+                        <TextView
+                            android:id="@+id/tx_invest_fund"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/invest_fund"
+                            android:textColor="#F7FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_invest_fund"
+                            app:layout_constraintStart_toEndOf="@+id/icon_invest_fund"
+                            app:layout_constraintTop_toTopOf="@+id/icon_invest_fund" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/bt_loan_mortgage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/bt_tag_box"
+                        tools:layout_editor_absoluteX="212dp"
+                        tools:layout_editor_absoluteY="405dp">
+
+                        <ImageView
+                            android:id="@+id/bg_loan_mortgage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/bt_tag_box"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/icon_loan_mortgage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/icon_loan"
+                            app:layout_constraintBottom_toBottomOf="@+id/bg_loan_mortgage"
+                            app:layout_constraintStart_toStartOf="@+id/bg_loan_mortgage"
+                            app:layout_constraintTop_toTopOf="@+id/bg_loan_mortgage"
+                            app:layout_constraintVertical_bias="0.50" />
+
+                        <TextView
+                            android:id="@+id/tx_loan_mortgage"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/loan_mortgage"
+                            android:textColor="#F7FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/icon_loan_mortgage"
+                            app:layout_constraintStart_toEndOf="@+id/icon_loan_mortgage"
+                            app:layout_constraintTop_toTopOf="@+id/icon_loan_mortgage" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </TableRow>
+
+
+            </TableLayout>
+
+            <ImageView
+                android:id="@+id/bgStatement"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_statement"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+            <ImageView
+                android:id="@+id/bgStatementBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_statementbox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgStatement" />
+
+
+            <TextView
+                android:id="@+id/myStatement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/online_statement"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/bgStatement"
+                app:layout_constraintTop_toTopOf="@+id/bgStatement" />
+
+            <TextView
+                android:id="@+id/monthlyIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/monthly_income"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/myStatement"
+                app:layout_constraintTop_toBottomOf="@+id/myStatement" />
+
+            <TextView
+                android:id="@+id/monthlySpend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="48dp"
+                android:text="@string/monthly_spend"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/myStatement"
+                app:layout_constraintTop_toBottomOf="@+id/monthlyIncome" />
+
+            <TextView
+                android:id="@+id/dollar500"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/dollar_500"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/bgStatement"
+                app:layout_constraintTop_toTopOf="@+id/monthlyIncome" />
+
+            <TextView
+                android:id="@+id/dollarMinus320"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/dollar_minus_320"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/bgStatement"
+                app:layout_constraintTop_toTopOf="@+id/monthlySpend" />
+
+            <TextView
+                android:id="@+id/viewMoreIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:text="@string/view_more"
+                app:layout_constraintEnd_toEndOf="@+id/dollar500"
+                app:layout_constraintTop_toBottomOf="@+id/dollar500" />
+
+            <TextView
+                android:id="@+id/viewMoreSpend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="0dp"
+                android:text="@string/view_more"
+                app:layout_constraintEnd_toEndOf="@+id/dollarMinus320"
+                app:layout_constraintTop_toBottomOf="@+id/dollarMinus320" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</androidx.slidingpanelayout.widget.SlidingPaneLayout>

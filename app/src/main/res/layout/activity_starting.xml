@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0A2B52"
+    android:animateLayoutChanges="true"
+    tools:context=".StartingActivity">
+
+    <ImageView
+        android:id="@+id/hobTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/title" />
+
+    <ImageView
+        android:id="@+id/bgBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hobTitle" />
+
+    <Button
+        android:id="@+id/btSignIn"
+        style="@style/Widget.AppCompat.ImageButton"
+        android:layout_width="180dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="64dp"
+        android:adjustViewBounds="false"
+        android:background="@drawable/bt_signin"
+        android:cropToPadding="true"
+        android:onClick="signIn"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/hobTitle"
+        app:layout_constraintStart_toStartOf="@+id/hobTitle"
+        app:layout_constraintTop_toBottomOf="@+id/bgBar"
+        app:layout_constraintVertical_bias="0.07999998" />
+
+    <Button
+        android:id="@+id/btRegister"
+        android:layout_width="140dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bt_register"
+        app:layout_constraintEnd_toEndOf="@+id/btSignIn"
+        app:layout_constraintStart_toStartOf="@+id/btSignIn"
+        app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
+
+    <ImageView
+        android:id="@+id/iconThirdParty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="32dp"
+        android:src="@drawable/icon_thirdparty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btRegister"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <ImageView
+        android:id="@+id/bgCopyRight"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="32dp"
+        android:fitsSystemWindows="true"
+        android:src="@drawable/bg_copyright"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconThirdParty"
+        app:layout_constraintVertical_bias="0.56" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
