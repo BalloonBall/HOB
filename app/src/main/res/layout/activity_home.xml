@@ -88,12 +88,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="48dp"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintVertical_bias="0.0">
-            </ListView>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"></ListView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -654,6 +654,164 @@
                 android:text="@string/view_more"
                 app:layout_constraintEnd_toEndOf="@+id/dollarMinus320"
                 app:layout_constraintTop_toBottomOf="@+id/dollarMinus320" />
+
+            <TextView
+                android:id="@+id/titleHarvestMore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/harvest_more_benefit"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgStatementBox" />
+
+            <TextView
+                android:id="@+id/benefitDiscription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="@string/benefit_description"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleHarvestMore" />
+
+            <ImageView
+                android:id="@+id/bgBar1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_menu_bar"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContentBar3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bgContentBar3" />
+
+            <ImageView
+                android:id="@+id/bgContentBar1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/benefitDiscription"
+                app:srcCompat="@drawable/bg_content_bar_1" />
+
+            <ImageView
+                android:id="@+id/bgContentBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgContentBar1"
+                app:srcCompat="@drawable/bg_content_bar_2" />
+
+            <ImageView
+                android:id="@+id/bgContentBar3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bgContentBar2"
+                app:srcCompat="@drawable/bg_content_bar_3" />
+
+            <ImageView
+                android:id="@+id/spriteRunning"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:onClick="clickJump"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContentBar3"
+                app:layout_constraintEnd_toStartOf="@+id/bgContentBar2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/bgContentBar1"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/animation_1" />
+
+            <ImageView
+                android:id="@+id/icon_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContentBar1"
+                app:layout_constraintStart_toStartOf="@+id/bgContentBar1"
+                app:layout_constraintTop_toTopOf="@+id/bgContentBar1"
+                app:srcCompat="@drawable/icon_recommend" />
+
+            <TextView
+                android:id="@+id/tx_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/recommend"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_recommend"
+                app:layout_constraintEnd_toEndOf="@+id/bgContentBar1"
+                app:layout_constraintStart_toEndOf="@+id/icon_recommend"
+                app:layout_constraintTop_toTopOf="@+id/icon_recommend" />
+
+            <ImageView
+                android:id="@+id/icon_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContentBar2"
+                app:layout_constraintStart_toStartOf="@+id/bgContentBar2"
+                app:layout_constraintTop_toTopOf="@+id/bgContentBar2"
+                app:srcCompat="@drawable/icon_like" />
+
+            <TextView
+                android:id="@+id/tx_favourite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/favourite"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_favourite"
+                app:layout_constraintEnd_toEndOf="@+id/bgContentBar2"
+                app:layout_constraintStart_toEndOf="@+id/icon_favourite"
+                app:layout_constraintTop_toTopOf="@+id/icon_favourite" />
+
+            <ImageView
+                android:id="@+id/icon_browse_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContentBar3"
+                app:layout_constraintStart_toStartOf="@+id/bgContentBar3"
+                app:layout_constraintTop_toTopOf="@+id/bgContentBar3"
+                app:srcCompat="@drawable/icon_browser" />
+
+            <TextView
+                android:id="@+id/tx_browse_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="@string/browse_for_more"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/icon_browse_more"
+                app:layout_constraintEnd_toEndOf="@+id/bgContentBar3"
+                app:layout_constraintStart_toEndOf="@+id/icon_browse_more"
+                app:layout_constraintTop_toTopOf="@+id/icon_browse_more" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

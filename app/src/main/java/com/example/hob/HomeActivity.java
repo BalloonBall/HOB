@@ -6,7 +6,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.slidingpanelayout.widget.SlidingPaneLayout;
 
 import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -36,15 +38,28 @@ import java.util.Map;
 import java.util.NavigableMap;
 
 public class HomeActivity extends AppCompatActivity{
+
     SlidingPaneLayout mSlidier;
     View mMenuNavi;
     View mScrollView;
+
+    ImageView imageRun;
+    AnimationDrawable spriteRun;
+    AnimationDrawable spriteJump;
+
+    public Handler handler;
+    public Runnable runnable;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        imageRun = findViewById(R.id.spriteRunning);
+        imageRun.setImageResource(R.drawable.animation_1);
+        spriteRun=(AnimationDrawable)imageRun.getDrawable();
+        spriteRun.start();
 
         mSlidier= findViewById(R.id.mainLayout);
         mMenuNavi = findViewById(R.id.menuNavi);
@@ -102,6 +117,26 @@ public class HomeActivity extends AppCompatActivity{
             hiddenAccount.setVisibility(View.GONE);
             tag1 = 0;
         }
+    }
+
+    public void clickJump(View view){
+        Animation jumpTranslate = AnimationUtils.loadAnimation(this, R.animator.jump);
+        view.startAnimation(jumpTranslate);
+        imageRun = findViewById(R.id.spriteRunning);
+        imageRun.setImageResource(R.drawable.animation_2);
+        spriteJump=(AnimationDrawable)imageRun.getDrawable();
+        spriteJump.start();
+
+        handler = new Handler();
+        handler.postDelayed(runnable = new Runnable() {
+            @Override
+            public void run() {
+                imageRun= findViewById(R.id.spriteRunning);
+                imageRun.setImageResource(R.drawable.animation_1);
+                spriteRun=(AnimationDrawable)imageRun.getDrawable();
+                spriteRun.start();
+            }
+        }, 810);
     }
 }
 
