@@ -28,10 +28,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.youth.banner.Banner;
 
 import java.lang.reflect.Array;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +66,13 @@ public class HomeActivity extends AppCompatActivity{
         mSlidier= findViewById(R.id.mainLayout);
         mMenuNavi = findViewById(R.id.menuNavi);
         mScrollView = findViewById(R.id.scrollView);
+
+
+        Integer[] imageAd ={R.drawable.balloon, R.drawable.beach, R.drawable.camp, R.drawable.mountain};
+        Banner banner = findViewById(R.id.banner);
+        banner.setImageLoader(new GlideImageLoader());
+        banner.setImages(Arrays.asList(imageAd));
+        banner.start();
 
         mMenuNavi.setAlpha(0);
         mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
@@ -136,8 +145,9 @@ public class HomeActivity extends AppCompatActivity{
                 spriteRun=(AnimationDrawable)imageRun.getDrawable();
                 spriteRun.start();
             }
-        }, 810);
+        }, 540);
     }
 }
+
 
 

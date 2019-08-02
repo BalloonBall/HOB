@@ -3,56 +3,56 @@
     android:oneshot="false">
     <item
         android:drawable="@drawable/jump_1"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_2"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_3"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_4"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_5"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_6"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_7"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_8"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/jump_9"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_1"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_2"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_3"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_4"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_5"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_6"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_7"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_8"
-        android:duration="45"/>
+        android:duration="30"/>
     <item
         android:drawable="@drawable/fall_9"
-        android:duration="45"/>
+        android:duration="30"/>
 </animation-list>
