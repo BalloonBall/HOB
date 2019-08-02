@@ -74,14 +74,16 @@ Mockplus is a good tool for conceptual user interface design. It has great chemi
 
 However, there is also drawbacks, which mainly related to the compression of image resources, which forces the prototype to be low-fi and requires extra high resolution UI graphics in later stage's development. There is no significant influence in tranditional companies using waterfall project management structure, where jobs are hignly specialised. For startup companies using agile structure, expecially when UI & UX jobs are merged, unable to export development-ready image resources could become an obvious disadvantage.
 
-## 高保真图制作练习
+## Hi-fi prototyping
 
-### 1. 高保真图的制作流程以及供给不同应用的需求
+### 1. Hi-fi prototyping: demand and methodology
 
-首先要确定的一个概念：高保真图≠最终成品图。
+It is important to understand that high fidelity prototype ≠ final product.
 
+Hi-fi graphic is a set of image resources with consistant design style produced by UI designer. It is usually done after the functionality modules of the interface have been confirmed. The graphic can achieve the preview requirement of hi-fi prototype, but the details including resolution and color are still awaiting adjustment. This is because toolkits in actual app develpment may not be able to achieve the design requirement.
 高保真图是在功能板块确定的情况下，由UI设计师绘制的风格统一的图标图片资源。能够实现高保真原型需要达到的效果，但细节（尺寸，颜色等）还未深入细化。由于开发工程的控件素材不一定能完全满足高保真设计的需求，最终成品需要在开发过程中进行调整。
 
+As an individual project, UI designer and software developer is the same. Most of the hi-fi graphic will be used in phase No.3, and the hi-fi prototype will look very identical to the final product.
 因为本项目是个人项目，UI设计和产品开发由同一人完成，所以在第二阶段的高保真图将被大部分应用到第三阶段，高保真原型也将无限接近成品。
 
 本项目所需的高保真图主要为适配Android手机App的控件图标，为了适配从低（480p）到高（4K)分辨率的手机屏幕，大多数的控件图标将使用Adobe Illustrator绘制，其余复杂图形将使用Adobe Photoshop绘制。
