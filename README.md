@@ -21,6 +21,8 @@ A internship project aiming at developing a look-alike online banking interface.
         
 ## Harvest Online Banking app UI mock up
 
+### 1. Introduction to Mockplus
+
 Mockplus is a lightweight UI portotyping software focusing on representation of design concept. Mockplus has pre-installed the majority of layout tools and interaction algorithm for main stream platforms, including Web, iOS and Android app. It features agile preview by lowering resolution of image resources, which makes the file lighter and easier to communicate within the team.
 
 Mockplus has pre-installed a great number of template across the platform, with accesssible interaction framework. It also has over 200 interaction algorithm and 3000 icons for selection.
