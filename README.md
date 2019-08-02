@@ -70,7 +70,7 @@ In this practice, the loading page and home page tabs were created. The main foc
 
 ### Phase No.1 summary
 
-Mockplus is a good tool for conceptual design. It porduces great chemical reaction with UX designer who will need to respond immidiateltly to user need. 
+Mockplus is a good tool for conceptual user interface design. It has great chemical reaction with UX designer who will need to respond immidiateltly to user need. 
 
 However, there is also drawbacks, which mainly related to the compression of image resources, which forces the prototype to be low-fi and requires extra high resolution UI graphics in later stage's development. There is no significant influence in tranditional companies using waterfall project management structure, where jobs are hignly specialised. For startup companies using agile structure, expecially when UI & UX jobs are merged, unable to export development-ready image resources could become an obvious disadvantage.
 
