@@ -135,7 +135,7 @@ Abobe XD是一款UI/UX矢量化原型设计软件，它包含了许多Adobe软�
 
 Adobe XD采用了故事板结构的工作界面，便于保持各个页面间的风格统一，高保真度的素材组合能够非常接近成品效果。
 
-<img src="/Assets/image/screenshot/xd_stroyboard.png" width="600" />
+<img src="/Assets/image/screenshot/xd_storyboard.png" width="600" />
 
 第二阶段的设计内容包括了载入界面，登录界面和主页等页面，在Adobe XD中的预览效果如下所示：
 [xd_demo_url]
