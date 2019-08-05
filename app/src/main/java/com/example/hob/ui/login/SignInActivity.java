@@ -2,7 +2,6 @@ package com.example.hob.ui.login;
 
 import android.app.Activity;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -28,7 +27,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.hob.HomeActivity;
-import com.example.hob.LoadingActivity;
 import com.example.hob.R;
 import com.example.hob.StartingActivity;
 

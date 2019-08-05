@@ -18,7 +18,9 @@ public class LoadingActivity extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fullscreen);
+        // click to skip method.
         initView();
+        // delay to skip method with handler. Delay 3000ms and intent to next activity.
         handler = new Handler();
         handler.postDelayed(runnable = new Runnable() {
             @Override
@@ -31,12 +33,14 @@ public class LoadingActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    // set onclick listener on loading image.
     private void initView() {
         ImageView loading = findViewById(R.id.loading);
         loading.setOnClickListener(this);
     }
 
 
+    // onclick, intent to next activity immediately and remove the delay handler
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
