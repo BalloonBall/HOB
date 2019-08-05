@@ -164,7 +164,31 @@ Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，
 - Android Gradle Plugin Version: 3.4.2
 - Gradle Version: 5.1.1
 
+### 2. 透明状态栏&导航栏
 
+Android 5.0以上常用到的透明状态栏&导航栏效果。在style.xml中新建一个style，并添加如下代码：
+```     
+<style name="AppTheme.NoActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+</style> 
+```
+然后在AndroidManifest.xml中设置Activity使用的style:
+```
+<activity
+    android:name=".StartingActivity"
+    android:theme="@style/AppTheme.NoActionBar" />
+```
+透明化状态栏后，有时会有如下情况出现，状态栏和刘海遮挡住一部分页面内容。
+
+<img src="/Assets/image/screenshot/status_bar_false.png" width="200" />
+
+此时在页面layout中被遮挡的组件里添加如下代码,使组件自适应被透明化的状态栏：
+```
+android:fitsSystemWindows="true"
+```
+<img src="/Assets/image/screenshot/status_bar_true.png" width="200" />
 
 
 
