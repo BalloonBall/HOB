@@ -68,13 +68,9 @@ Mockplus中内置了各个平台，各个种类的交互界面模板，用户可
 
 Mockplus中多个界面的交互主要通过页链接实现。页链接包含了几种基本的动画效果（推入、滑入、淡出等），可以设定所用动画的持续时间。页链接为点击触发，需要载入触发和延时触发的交互需要使用额外的组件。
 
-本次练习制作了载入界面和主页的标签页，其中重点制作了个人信息标签页，并在此基础上制作了注册开户的主要流程。以下为部分页面效果展示，具体交互效果详见[mockplus_demo_url](https://v.youku.com/v_show/id_XNDMwMTM0NTE5Ng)
+本次练习制作了载入界面和主页的标签页，其中重点制作了个人信息标签页，并在此基础上制作了注册开户的主要流程。以下为部分页面效果展示，具体交互效果详见[此链接(密码：0000)](https://v.youku.com/v_show/id_XNDMwMTM0NTE5Ng)
 
 <img src="/Assets/image/screenshot/mockplus_demo.png" width="600" />
-
-<video id="video" controls="" preload="none" poster="/Assets/image/screenshot/mockplus_demo.png">
-    <source id="mp4" src="https://v.youku.com/v_show/id_XNDMwMTM0NTE5Ng" type="video/mp4">
-</video>
 
 ### 项目第一阶段小结
 
