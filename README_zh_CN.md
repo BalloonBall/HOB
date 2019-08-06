@@ -167,7 +167,7 @@ Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，
 ### 2. 透明状态栏&导航栏
 
 Android 5.0以上常用到的透明状态栏&导航栏效果。在`style.xml`中新建一个style，并添加如下代码：
-```     
+```java
 <style name="AppTheme.NoActionBar">
     <item name="windowNoTitle">true</item>
     <item name="android:windowTranslucentStatus">true</item>
@@ -175,7 +175,7 @@ Android 5.0以上常用到的透明状态栏&导航栏效果。在`style.xml`中
 </style> 
 ```
 然后在`AndroidManifest.xml`中设置Activity使用的style,这里以`StartingActivity`为例:
-```
+```java
 <activity
     android:name=".StartingActivity"
     android:theme="@style/AppTheme.NoActionBar" />
@@ -185,7 +185,7 @@ Android 5.0以上常用到的透明状态栏&导航栏效果。在`style.xml`中
 <img src="/Assets/image/screenshot/status_bar_false.png" width="200" />
 
 此时在页面layout中被遮挡的组件里添加如下代码,使组件自适应被透明化的状态栏：
-```
+```java
 android:fitsSystemWindows="true"
 ```
 <img src="/Assets/image/screenshot/status_bar_true.png" width="200" />
@@ -197,7 +197,7 @@ android:fitsSystemWindows="true"
 <img src="/Assets/image/screenshot/fade_anime_1.gif" width="200" />
 
 一个最快捷的做法——在页面layout中加入如下代码：
-```
+```java
 android:animateLayoutChanges="true"
 ```
 `animateLayoutChanges`不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
@@ -213,7 +213,7 @@ android:animateLayoutChanges="true"
 在layout文件中，使用`androidx.slidingpanelayout.widget.SlidingPaneLayout`作为控件主体, 然后添加子控件`ListView`。
 
 `ListView`中单元格的格式另建一个.xml编写。在`layout`文件夹里新建`list_layout.xml`，写入图标+标签文字的单元格格式。
-```
+```java
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
@@ -240,7 +240,7 @@ android:animateLayoutChanges="true"
 </LinearLayout>
 ```
 在对应的Activity中，列出所用的图标和对应的标签文字，一一匹配后生成ArrayList。
-```
+```java
 int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
 String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
 List<Map<String, Object>> listItem = new ArrayList<>();
@@ -253,7 +253,7 @@ for (int i = 0; i < imageId.length; i++)
     }
 ```
 使用Adapter生成ListView。
-```
+```java
 SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, new String[]{"name", "image"}, new int[]{R.id.title, R.id.image});
 ListView listView = super.findViewById(R.id.menuListView);
 listView.setAdapter(adapter);
