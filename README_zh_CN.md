@@ -174,7 +174,7 @@ Android 5.0以上常用到的透明状态栏&导航栏效果。在style.xml中�
     <item name="android:windowTranslucentNavigation">true</item>
 </style> 
 ```
-然后在AndroidManifest.xml中设置Activity使用的style:
+然后在AndroidManifest.xml中设置Activity使用的style,这里以StartingActivity为例:
 ```
 <activity
     android:name=".StartingActivity"
@@ -190,6 +190,11 @@ android:fitsSystemWindows="true"
 ```
 <img src="/Assets/image/screenshot/status_bar_true.png" width="200" />
 
+### 3. 过渡动画
 
-
-
+在涉及到例如改变组件可见度的交互中，直接出现/消失会显得比较生硬，此时选择制作淡入/淡出动画。
+一个最快捷的做法——在页面layout中加入如下代码：
+```
+android:animateLayoutChanges="true"
+```
+animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
