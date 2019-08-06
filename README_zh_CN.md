@@ -166,7 +166,7 @@ Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，
 
 ### 2. 透明状态栏&导航栏
 
-Android 5.0以上常用到的透明状态栏&导航栏效果。在style.xml中新建一个style，并添加如下代码：
+Android 5.0以上常用到的透明状态栏&导航栏效果。在`style.xml`中新建一个style，并添加如下代码：
 ```     
 <style name="AppTheme.NoActionBar">
     <item name="windowNoTitle">true</item>
@@ -174,7 +174,7 @@ Android 5.0以上常用到的透明状态栏&导航栏效果。在style.xml中�
     <item name="android:windowTranslucentNavigation">true</item>
 </style> 
 ```
-然后在AndroidManifest.xml中设置Activity使用的style,这里以StartingActivity为例:
+然后在`AndroidManifest.xml`中设置Activity使用的style,这里以`StartingActivity`为例:
 ```
 <activity
     android:name=".StartingActivity"
@@ -200,7 +200,7 @@ android:fitsSystemWindows="true"
 ```
 android:animateLayoutChanges="true"
 ```
-animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
+`animateLayoutChanges`不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
 
 <img src="/Assets/image/screenshot/fade_anime_2.gif" width="200" />
 
@@ -210,9 +210,9 @@ animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位�
 
 <img src="/Assets/image/screenshot/fade_panel.gif" width="200" />
 
-在layout文件中，使用androidx.slidingpanelayout.widget.SlidingPaneLayout作为控件主体, 然后添加子控件ListView。
+在layout文件中，使用`androidx.slidingpanelayout.widget.SlidingPaneLayout`作为控件主体, 然后添加子控件`ListView`。
 
-ListView中单元格的格式另建一个.xml编写。在layout文件夹里新建list_layout.xml，写入图标+标签文字的单元格格式。
+`ListView`中单元格的格式另建一个.xml编写。在`layout`文件夹里新建`list_layout.xml`，写入图标+标签文字的单元格格式。
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
