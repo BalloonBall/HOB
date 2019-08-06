@@ -241,22 +241,22 @@ ListView中单元格的格式另建一个.xml编写。在layout文件夹里新�
 ```
 在对应的Activity中，列出所用的图标和对应的标签文字，一一匹配后生成ArrayList。
 ```
-        int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
-        String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
-        List<Map<String, Object>> listItem = new ArrayList<>();
-        for (int i = 0; i < imageId.length; i++)
-            {
-            Map<String, Object> map = new HashMap<>();
-            map.put("image", imageId[i]);
-            map.put("name", name[i]);
-            listItem.add(map);
-            }
+int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
+String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
+List<Map<String, Object>> listItem = new ArrayList<>();
+for (int i = 0; i < imageId.length; i++)
+    {
+    Map<String, Object> map = new HashMap<>();
+    map.put("image", imageId[i]);
+    map.put("name", name[i]);
+    listItem.add(map);
+    }
 ```
 使用Adapter生成ListView。
 ```
-        SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, new String[]{"name", "image"}, new int[]{R.id.title, R.id.image});
-        ListView listView = super.findViewById(R.id.menuListView);
-        listView.setAdapter(adapter);
+SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, new String[]{"name", "image"}, new int[]{R.id.title, R.id.image});
+ListView listView = super.findViewById(R.id.menuListView);
+listView.setAdapter(adapter);
 ```
 
 
