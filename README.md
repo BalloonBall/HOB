@@ -7,23 +7,23 @@ A internship project aiming at developing a look-alike online banking interface.
 ## Index
 
 #### 1. Harvest Online Banking app UI mock up
-    1. Introduction to Mockplus
-    1. Fetch image resources from client APK
-    1. Basic loading page design
-    1. System mock up: Login & Account Activation workflow
+1. Introduction to Mockplus
+1. Fetch image resources from client APK
+1. Basic loading page design
+1. System mock up: Login & Account Activation workflow
 #### 2. Hi-fi prototyping
-    1. Hi-fi prototyping: demand and methodology
-    1. Vector graphics with Adobe Illustrator
-    1. High resolution image with Adobe Photoshop
-    1. High fidelity Prototyping with Adobe XD
-    1. Export as resources for software development
+1. Hi-fi prototyping: demand and methodology
+1. Vector graphics with Adobe Illustrator
+1. High resolution image with Adobe Photoshop
+1. High fidelity Prototyping with Adobe XD
+1. Export as resources for software development
 #### 3. Android App development
-    1. Project setting
-    1. Translucent status bar & navigation bar
-    1. Fade in/out
-    1. Build navigation menu with SlidingPaneLayout and ListView
-    1. Sprite animation with Animation-list
-    1. Banner with external library
+1. Project setting
+1. Translucent status bar & navigation bar
+1. Fade in/out
+1. Build navigation menu with SlidingPaneLayout and ListView
+1. Sprite animation with Animation-list
+1. Banner with external library
 ## Harvest Online Banking app UI mock up
 
 ### 1. Introduction to Mockplus
