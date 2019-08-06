@@ -221,10 +221,6 @@ android:animateLayoutChanges="true"
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/image"
-        android:paddingStart="32dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
         android:maxHeight="72dp"
         android:maxWidth="72dp"
         android:layout_width="72dp"
@@ -233,8 +229,6 @@ android:animateLayoutChanges="true"
         android:id="@+id/title"
         android:padding="16dp"
         android:layout_gravity="center"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
@@ -258,5 +252,13 @@ SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, 
 ListView listView = super.findViewById(R.id.menuListView);
 listView.setAdapter(adapter);
 ```
-
+完成ListView后，制作滑动时导航菜单的淡入/淡出动画，该步骤通过改变导航菜单的透明度实现，初始值设为0，根据滑动的完成度从0过渡到1。
+```java
+mMenuNavi.setAlpha(0);
+mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
+    @Override
+    public void onPanelSlide(@NonNull View panel, float slideOffset) {
+        mMenuNavi.setAlpha(slideOffset);
+    }
+```
 
