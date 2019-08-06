@@ -6,7 +6,7 @@
 
 ## 目录
 
-#### 1. 丰收互联APP(Android)界面模仿练习
+#### 1. [丰收互联APP(Android)界面模仿练习](#L28)
     1.1. Mockplus功能简介
     1.2. 从App安装包获取图片资源
     1.3. 使用Mockplus制作基础的载入界面
@@ -23,6 +23,7 @@
     3.3. 过渡动画
     3.4. 使用SlidingPaneLayout和ListView制作导航菜单
     3.5. 使用Animation-List制作逐帧动画
+    3.6. 调用外部lib实现广告图片轮播
             
 ## 丰收互联APP(Android)界面模仿练习
 
@@ -291,7 +292,7 @@ spriteRun=(AnimationDrawable)imageRun.getDrawable();
 spriteRun.start();
 ```
 
-### 5. 调用外部lib实现广告图片轮播
+### 6. 调用外部lib实现广告图片轮播
 
 [调用的lib](https://github.com/youth5201314/banner)
 
