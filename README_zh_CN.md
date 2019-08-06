@@ -204,4 +204,10 @@ animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位�
 
 <img src="/Assets/image/screenshot/fade_anime_2.gif" width="200" />
 
+### 4. 使用listView制作导航菜单
 
+用户账户、偏好设置等细分功能通常出现在导航菜单中。这里使用了一个符合安卓风格的右滑出现导航菜单。
+
+<img src="/Assets/image/screenshot/fade_panel.gif" width="200" />
+
+在layout文件中，使用androidx.slidingpanelayout.widget.SlidingPaneLayout作为控件主体。
