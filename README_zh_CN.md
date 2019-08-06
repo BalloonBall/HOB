@@ -283,7 +283,7 @@ mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
         android:duration="45"/>
 </animation-list>
 ```
-在页面layout中新建一个`ImageView`控件, 然后在Activity的onCreate中将列表中的图片逐一显示在ImageView。
+在页面layout中新建一个`ImageView`控件, 然后在Activity的`onCreate`中将列表中的图片逐一显示在ImageView。
 ```java
 imageRun = findViewById(R.id.spriteRunning);
 imageRun.setImageResource(R.drawable.animation_1);
@@ -291,7 +291,39 @@ spriteRun=(AnimationDrawable)imageRun.getDrawable();
 spriteRun.start();
 ```
 
+### 5. 调用外部lib实现广告图片轮播
 
+[调用的lib](https://github.com/youth5201314/banner)
 
+在`build.gradle(Module:app)`中添加依赖。
+```java
+dependencies{
+    implementation 'com.youth.banner:banner:1.4.10'
+    implementation 'com.github.bumptech.glide:glide:3.8.0'   
+}
+```
+如果需要从网络载入图片，在`AndroidManifest.xml`中添加权限。
+```java
+<uses-permission android:name="android.permission.INTERNET" /> 
+```
+新建`GlideImageLoader.java`写入Glide图片加载器。
+```java
+public class GlideImageLoader extends ImageLoader {
+    @Override
+    public void displayImage(Context context, Object path, ImageView imageView) {
+        Glide.with(context).load(path).into(imageView);
+    }
+}
+```
+在页面Activity中，列出轮播所用广告图片，然后在`onCreate`中加载banner。
+```java
+// make list for images displayed in banner ads.
+Integer[] imageAd ={R.drawable.balloon, R.drawable.beach, R.drawable.camp, R.drawable.mountain};
+// set up banner.
+Banner banner = findViewById(R.id.banner);
+banner.setImageLoader(new GlideImageLoader());
+banner.setImages(Arrays.asList(imageAd));
+banner.start();
+```
 
 
