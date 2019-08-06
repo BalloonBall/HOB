@@ -260,4 +260,37 @@ mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
         mMenuNavi.setAlpha(slideOffset);
     }
 ```
+### 5. 使用Animation List制作逐帧动画
+
+在App主界面中希望实现如下效果的动画：
+
+<img src="/Assets/image/screenshot/running.gif" width="200" />
+
+将动画关键帧图片（.png格式）导入`drawable`文件夹中，新建一个.xml文件，编辑为`animation-list`。
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/sprite_1"
+        android:duration="45"/>
+    <item
+        android:drawable="@drawable/sprite_2"
+        android:duration="45"/>
+    <item
+        android:drawable="@drawable/sprite_3"
+        android:duration="45"/>
+</animation-list>
+```
+在页面layout中新建一个`ImageView`控件, 然后在Activity的onCreate中将列表中的图片逐一显示在ImageView。
+```java
+imageRun = findViewById(R.id.spriteRunning);
+imageRun.setImageResource(R.drawable.animation_1);
+spriteRun=(AnimationDrawable)imageRun.getDrawable();
+spriteRun.start();
+```
+
+
+
+
 
