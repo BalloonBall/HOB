@@ -19,10 +19,11 @@
     2.5. 高保真图的导出和一些注意事项
 #### 3. 安卓APP前端开发练习
     3.1. 创建项目
-    3.2. 载入界面——全屏Activity
-        3.2.1. 载入界面的点击跳过与延时跳过
-        3.2.2. 全屏Style的参数设置
-        
+    3.2. 透明状态栏&导航栏
+    3.3. 过渡动画
+    3.4. 使用SlidingPaneLayout和ListView制作导航菜单
+    3.5. 使用Animation-List制作逐帧动画
+            
 ## 丰收互联APP(Android)界面模仿练习
 
 ### 1. Mockplus功能简介
@@ -232,7 +233,7 @@ android:animateLayoutChanges="true"
         android:layout_height="wrap_content" />
 </LinearLayout>
 ```
-在对应的Activity中，列出所用的图标和对应的标签文字，一一匹配后生成ArrayList。
+在对应的Activity中，列出所用的图标和对应的标签文字，逐一匹配后生成ArrayList。
 ```java
 int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
 String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
@@ -260,7 +261,7 @@ mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
         mMenuNavi.setAlpha(slideOffset);
     }
 ```
-### 5. 使用Animation List制作逐帧动画
+### 5. 使用Animation-List制作逐帧动画
 
 在App主界面中希望实现如下效果的动画：
 
