@@ -204,10 +204,59 @@ animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位�
 
 <img src="/Assets/image/screenshot/fade_anime_2.gif" width="200" />
 
-### 4. 使用listView制作导航菜单
+### 4. 使用SlidingPaneLayout和ListView制作导航菜单
 
 用户账户、偏好设置等细分功能通常出现在导航菜单中。这里使用了一个符合安卓风格的右滑出现导航菜单。
 
 <img src="/Assets/image/screenshot/fade_panel.gif" width="200" />
 
-在layout文件中，使用androidx.slidingpanelayout.widget.SlidingPaneLayout作为控件主体。
+在layout文件中，使用androidx.slidingpanelayout.widget.SlidingPaneLayout作为控件主体, 然后添加子控件ListView。
+
+ListView中单元格的格式另建一个.xml编写。在layout文件夹里新建list_layout.xml，写入图标+标签文字的单元格格式。
+```
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image"
+        android:paddingStart="32dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:maxHeight="72dp"
+        android:maxWidth="72dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp" />
+    <TextView
+        android:id="@+id/title"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+```
+在对应的Activity中，列出所用的图标和对应的标签文字，一一匹配后生成ArrayList。
+```
+        int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
+        String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
+        List<Map<String, Object>> listItem = new ArrayList<>();
+        for (int i = 0; i < imageId.length; i++)
+            {
+            Map<String, Object> map = new HashMap<>();
+            map.put("image", imageId[i]);
+            map.put("name", name[i]);
+            listItem.add(map);
+            }
+```
+使用Adapter生成ListView。
+```
+        SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, new String[]{"name", "image"}, new int[]{R.id.title, R.id.image});
+        ListView listView = super.findViewById(R.id.menuListView);
+        listView.setAdapter(adapter);
+```
+
+
