@@ -193,8 +193,15 @@ android:fitsSystemWindows="true"
 ### 3. 过渡动画
 
 在涉及到例如改变组件可见度的交互中，直接出现/消失会显得比较生硬，此时选择制作淡入/淡出动画。
+
+<img src="/Assets/image/screenshot/fade_anime_1.gif" width="200" />
+
 一个最快捷的做法——在页面layout中加入如下代码：
 ```
 android:animateLayoutChanges="true"
 ```
 animateLayoutChanges不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
+
+<img src="/Assets/image/screenshot/fade_anime_2.gif" width="200" />
+
+
