@@ -19,10 +19,11 @@
     2.5. 高保真图的导出和一些注意事项
 #### 3. 安卓APP前端开发练习
     3.1. 创建项目
-    3.2. 载入界面——全屏Activity
-        3.2.1. 载入界面的点击跳过与延时跳过
-        3.2.2. 全屏Style的参数设置
-        
+    3.2. 透明状态栏&导航栏
+    3.3. 过渡动画
+    3.4. 使用SlidingPaneLayout和ListView制作导航菜单
+    3.5. 使用Animation-List制作逐帧动画
+            
 ## 丰收互联APP(Android)界面模仿练习
 
 ### 1. Mockplus功能简介
@@ -68,7 +69,7 @@ Mockplus中内置了各个平台，各个种类的交互界面模板，用户可
 
 Mockplus中多个界面的交互主要通过页链接实现。页链接包含了几种基本的动画效果（推入、滑入、淡出等），可以设定所用动画的持续时间。页链接为点击触发，需要载入触发和延时触发的交互需要使用额外的组件。
 
-本次练习制作了载入界面和主页的标签页，其中重点制作了个人信息标签页，并在此基础上制作了注册开户的主要流程。以下为部分页面效果展示，具体交互效果详见[mockplus_demo_url]
+本次练习制作了载入界面和主页的标签页，其中重点制作了个人信息标签页，并在此基础上制作了注册开户的主要流程。以下为部分页面效果展示，具体交互效果详见[流程展示录像(密码：0000)](https://v.youku.com/v_show/id_XNDMwMjI2ODc0OA)。
 
 <img src="/Assets/image/screenshot/mockplus_demo.png" width="600" />
 
@@ -137,8 +138,7 @@ Adobe XD采用了故事板结构的工作界面，便于保持各个页面间的
 
 <img src="/Assets/image/screenshot/xd_storyboard.png" width="600" />
 
-第二阶段的设计内容包括了载入界面，登录界面和主页等页面，在Adobe XD中的预览效果如下所示：
-[xd_demo_url]
+第二阶段的设计内容包括了载入界面，登录界面和主页等页面，在Adobe XD中的预览效果详见[演示录像(密码：0000)](https://v.youku.com/v_show/id_XNDMwMjI2NjcwMA)。
 
 ### 5. 高保真图的导出和一些注意事项
 
@@ -155,7 +155,7 @@ Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，
 
 ## 安卓APP前端开发练习
 
-本项目中安卓APP包含了多个界面，具体制作流程不一一赘述，此部分将记录一些重要功能的实现，作为开发学习笔记。
+本项目中安卓APP包含了多个界面，具体制作流程不一一赘述，此部分将记录一些重要功能的实现，作为开发学习笔记。成品效果详见[演示录像(密码：0000)](https://v.youku.com/v_show/id_XNDMwMjE5OTYzMg)。
 
 ### 1. 创建项目
 
@@ -164,6 +164,132 @@ Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，
 - Android Gradle Plugin Version: 3.4.2
 - Gradle Version: 5.1.1
 
+### 2. 透明状态栏&导航栏
+
+Android 5.0以上常用到的透明状态栏&导航栏效果。在`style.xml`中新建一个style，并添加如下代码：
+```java
+<style name="AppTheme.NoActionBar">
+    <item name="windowNoTitle">true</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:windowTranslucentNavigation">true</item>
+</style> 
+```
+然后在`AndroidManifest.xml`中设置Activity使用的style,这里以`StartingActivity`为例:
+```java
+<activity
+    android:name=".StartingActivity"
+    android:theme="@style/AppTheme.NoActionBar" />
+```
+透明化状态栏后，有时会有如下情况出现，状态栏和刘海遮挡住一部分页面内容。
+
+<img src="/Assets/image/screenshot/status_bar_false.png" width="200" />
+
+此时在页面layout中被遮挡的组件里添加如下代码,使组件自适应被透明化的状态栏：
+```java
+android:fitsSystemWindows="true"
+```
+<img src="/Assets/image/screenshot/status_bar_true.png" width="200" />
+
+### 3. 过渡动画
+
+在涉及到例如改变组件可见度的交互中，直接出现/消失会显得比较生硬，此时选择制作淡入/淡出动画。
+
+<img src="/Assets/image/screenshot/fade_anime_1.gif" width="200" />
+
+一个最快捷的做法——在页面layout中加入如下代码：
+```java
+android:animateLayoutChanges="true"
+```
+`animateLayoutChanges`不仅能实现淡入/淡出动画的效果，还能给位移和旋转等布局改变添加过渡效果。
+
+<img src="/Assets/image/screenshot/fade_anime_2.gif" width="200" />
+
+### 4. 使用SlidingPaneLayout和ListView制作导航菜单
+
+用户账户、偏好设置等细分功能通常出现在导航菜单中。这里使用了一个符合安卓风格的右滑出现导航菜单。
+
+<img src="/Assets/image/screenshot/fade_panel.gif" width="200" />
+
+在layout文件中，使用`androidx.slidingpanelayout.widget.SlidingPaneLayout`作为控件主体, 然后添加子控件`ListView`。
+
+`ListView`中单元格的格式另建一个.xml编写。在`layout`文件夹里新建`list_layout.xml`，写入图标+标签文字的单元格格式。
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/image"
+        android:maxHeight="72dp"
+        android:maxWidth="72dp"
+        android:layout_width="72dp"
+        android:layout_height="72dp" />
+    <TextView
+        android:id="@+id/title"
+        android:padding="16dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+```
+在对应的Activity中，列出所用的图标和对应的标签文字，逐一匹配后生成ArrayList。
+```java
+int[] imageId = new int[]{R.drawable.icon_profile, R.drawable.icon_news, R.drawable.icon_mail, R.drawable.icon_promo, R.drawable.icon_contact,  R.drawable.icon_setting};
+String[] name = new String[] {"Profile", "News", "Mailbox", "Promos", "Contact us", "Preference"};
+List<Map<String, Object>> listItem = new ArrayList<>();
+for (int i = 0; i < imageId.length; i++)
+    {
+    Map<String, Object> map = new HashMap<>();
+    map.put("image", imageId[i]);
+    map.put("name", name[i]);
+    listItem.add(map);
+    }
+```
+使用Adapter生成ListView。
+```java
+SimpleAdapter adapter = new SimpleAdapter(this, listItem, R.layout.list_layout, new String[]{"name", "image"}, new int[]{R.id.title, R.id.image});
+ListView listView = super.findViewById(R.id.menuListView);
+listView.setAdapter(adapter);
+```
+完成ListView后，制作滑动时导航菜单的淡入/淡出动画，该步骤通过改变导航菜单的透明度实现，初始值设为0，根据滑动的完成度从0过渡到1。
+```java
+mMenuNavi.setAlpha(0);
+mSlidier.setPanelSlideListener(new SlidingPaneLayout.PanelSlideListener() {
+    @Override
+    public void onPanelSlide(@NonNull View panel, float slideOffset) {
+        mMenuNavi.setAlpha(slideOffset);
+    }
+```
+### 5. 使用Animation-List制作逐帧动画
+
+在App主界面中希望实现如下效果的动画：
+
+<img src="/Assets/image/screenshot/running.gif" width="200" />
+
+将动画关键帧图片（.png格式）导入`drawable`文件夹中，新建一个.xml文件，编辑为`animation-list`。
+```java
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item
+        android:drawable="@drawable/sprite_1"
+        android:duration="45"/>
+    <item
+        android:drawable="@drawable/sprite_2"
+        android:duration="45"/>
+    <item
+        android:drawable="@drawable/sprite_3"
+        android:duration="45"/>
+</animation-list>
+```
+在页面layout中新建一个`ImageView`控件, 然后在Activity的onCreate中将列表中的图片逐一显示在ImageView。
+```java
+imageRun = findViewById(R.id.spriteRunning);
+imageRun.setImageResource(R.drawable.animation_1);
+spriteRun=(AnimationDrawable)imageRun.getDrawable();
+spriteRun.start();
+```
 
 
 
