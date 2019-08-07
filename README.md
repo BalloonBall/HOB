@@ -69,7 +69,7 @@ Two method forwarding to the next page: forward after timer up or after clicking
 
 The interaction between multiple interfaces are done with page link. Page link function in Mockplus includes several basic animation (e.g. push in, slide in and fade in), the duration of animation can be asigned. Page link can only be activated with clicking, other activation method require advanced interaction algorithm.
 
-In this practice, the loading page and home page tabs were created. The main focus was on User profile page, based on this page a register and account activation workflow was produced. Following pages are examples of the whole workflow, detailed interation is recorded in this video.[mockplus_demo_url]
+In this practice, the loading page and home page tabs were created. The main focus was on User profile page, based on this page a register and account activation workflow was produced. Following pages are examples of the whole workflow, detailed interation is recorded in the video [here(Password:0000)](https://v.youku.com/v_show/id_XNDMwMjI2ODc0OA)
 
 <img src="/Assets/image/screenshot/mockplus_demo.png" width="600" />
 
@@ -85,11 +85,11 @@ However, there is also drawbacks, which mainly related to the compression of ima
 
 It is important to understand that high fidelity prototype ≠ final product.
 
-Hi-fi graphic is a set of image resources with consistant design style produced by UI designer. It is usually done after the functionality modules of the interface have been confirmed. The graphic can achieve the preview requirement of hi-fi prototype, but the details including resolution and color are still awaiting adjustment. This is because toolkits in actual app develpment may not be able to achieve the design requirement.
+Hi-fi graphics is a set of image resources with consistant design style produced by UI designer. It is usually done after the functionality modules of the interface have been confirmed. The graphics can achieve the preview requirement of hi-fi prototype, but the details including resolution and color are still awaiting adjustment. This is because toolkits in actual app develpment may not be able to achieve the design requirement.
 
-As an individual project, UI designer and software developer is the same. Most of the hi-fi graphic will be used in phase No.3, and the hi-fi prototype will look very identical to the final product.
+As an individual project, UI designer and software developer is the same. Most of the hi-fi graphics will be used in phase No.3, and the hi-fi prototype will look very identical to the final product.
 
-Hi-fi graphic required in this porject are mainly icons for Android app that is going to be developed in phase No.3. They should be exported to sizes that are compatible with screen resolution from 480p to 4K. The majority of those icons will be produced with Adobe Illustrator, and few complicated with Adobe Photoshop.
+Hi-fi graphics required in this porject are mainly icons for Android app that is going to be developed in phase No.3. They should be exported to sizes that are compatible with screen resolution from 480p to 4K. The majority of those icons will be produced with Adobe Illustrator, and few complicated with Adobe Photoshop.
 
 A baseline of design style has to be decided before designing the icons. The plan suggested that the UI style "should be distinguishable against 丰收互联app". The style used in 丰收互联app is summarized as following:
 - Simplified
@@ -102,56 +102,43 @@ Considering those facts, choices about UI style has been made for this project:
 - Use of contrast/complementary color
 - Single scrowing homepage 
 
-绘制高保真图之前需要确立设计风格。第二阶段的设计要求为“不同于现有丰收互联客户端App的UI风格”，丰收互联客户端App的UI风格总结为：
-- 简约
-- 平面化
-- 使用同类色或邻近色
-- 多个标签页
-
-对此，本项目的UI设计采用了如下选择：
-- 涂鸦风格
-- 使用对比色和互补色
-- 单页竖直滚动
-
-配色选择如下：
+Color code used is here for reference:
 
 <img src="/Assets/image/screenshot/color_theme.png" width="600" />
 
-### 2. 使用Adobe Illustrator制作路径图标
+### 2. Vector graphics with Adobe Illustrator
 
-在Adobe Illustrator（简称AI）中，矢量图由路径构成，通过修改路径上的锚点可以精确绘制需要的图形，使得现阶段制作的高保真图有机会被直接修改为最终成品素材。
+In Adobe Illutrator(AI), graphics are made with bezier curves, accurate design can be made with adjustment of anchor points on the curve. This feature has made it possible to use modified Hi-fi grahics in final porduct.
 
-使用AI制作图标流程的例子如下图所示：
+An example of creating vector graphics with AI:
 
 <img src="/Assets/image/screenshot/ai_flow.png" width="600" />
 
-矢量图制作完成后，改变图形大小不会影响图片的清晰度。成品的大小可以在导出素材时设置，导出时可以设置批量导出适应各种分辨率屏幕的素材，此时暂不使用此功能。
+Resizing vector graphics will not affact image definition after exporting. The final resolution can be defined while exporting base on demand.
 
-### 3. 使用Adobe Photoshop制作复杂的高保真图片
+### 3. High resolution image with Adobe Photoshop
 
-Photoshop（简称PS）常被用于复杂高保真图的制作，尤其是占据大块屏幕空间的背景图片。本项目没有使用大面积的背景图片，但在制作关联第三方软件的控件图标时，使用了PS进行制作。
-
-使用PS制作第三方软件图像的流程如下图所示：
+Photoshop(PS) is a widely used image processing software, in hi-fi graphics design it is used to make complicated image. In this project, icons related to third-party software were made with PS.
 
 <img src="/Assets/image/screenshot/ps_flow.png" width="600" />
 
-图像统一导出为.png格式。
+Icons are exported as high resolution .png file.
 
-### 4. 使用Adobe XD整合并制作高保真界面预览
+### 4. High fidelity Prototyping with Adobe XD
 
-Abobe XD是一款UI/UX矢量化原型设计软件，它包含了许多Adobe软件一脉相承的设计工具，内置了基础的原型交互功能，使用插件来扩展更加复杂的交互需求。与Mockplus不同，Adobe XD文件中保留了设计所用的原始素材，且支持直接导出为开发者使用的资源组（适配不同屏幕分辨率的不同尺寸的图片），其自带组件也都是矢量形式，以便导出为各种尺寸。
+Adobe XD is a vectorized UI/UX prototyping software. It has adapted many design features from other adobe software. The number of interaction algorithm implanted is very limited, but can expand with plugins. Unlike Mockplus, image resources with original resolution is stored once imported, and can be exported to resources file used in software development, fitting different resolutions. Toolkits are also vectorized so that they are also developer-ready.
 
-本项目将利用Adobe XD素材导出功能的优势，在Adobe XD中先进行素材的排版与交互预览，测试之后统一导出，然后进入正式的App开发流程。
+Using the advantage stated above, in this porject a hi-fi prototype was created in Adobe XD, after a walk-through with all UI layout and interfaces, the image resources were exported with batch processing, stepping directly into software development stage.
 
-利用适合的插件可以大幅度提高原型设计的效率，参考由Google提供的Android官方素材库可以确保设计风格统一，组件适配屏幕，避免进入开发流程后碰到冲突的或难以实现的布局。
+With suitable plugins, the efficiency of prototyping can be significantly increased. Referring to Android sticker sample relased by Google official, the design scale are kept to be consistant, avoiding incompatible layout when developing the actural software.
 
 <img src="/Assets/image/screenshot/xd_android_sticker.png" width="600" />
 
-Adobe XD采用了故事板结构的工作界面，便于保持各个页面间的风格统一，高保真度的素材组合能够非常接近成品效果。
+The storyboard workspace is convinient to ensure the consistant design style, and make the prototype very much identical to the final product.
 
 <img src="/Assets/image/screenshot/xd_storyboard.png" width="600" />
 
-第二阶段的设计内容包括了载入界面，登录界面和主页等页面，在Adobe XD中的预览效果详见[演示录像(密码：0000)](https://v.youku.com/v_show/id_XNDMwMjI2NjcwMA)。
+Phase No.2 has included the design of loading page, login page and homepage. The test trail can be found [here(Password:0000)](https://v.youku.com/v_show/id_XNDMwMjI2NjcwMA)。
 
 ### 5. 高保真图的导出和一些注意事项
 
