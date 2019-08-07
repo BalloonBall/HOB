@@ -149,7 +149,7 @@ Things worth noting:
 - Set mdpi resolution as canvas size, otherwise the resolution could become mismatch after exporting.
 - Many items can be made with Android layout, make sure resources exported are necessary.
 
-### 项目第二阶段小结
+### Phase No.2 summary
 
 第二阶段的高保真原型制作并没有完全模仿丰收互联App的制作流程，主要原因是因为在个人项目中，制作图形素材耗费时间过多，遵循低保真——高保真——成品的流程制作2至3版素材容易导致项目延期。相对的，制作一版能直接导出为软件开发所需资源的原型，不但能节省时间，还能对开发过程中遇到的问题及时修正。为此，本项目放弃使用Mockplus作为原型设计软件，转为使用具有相似功能，但支持高保真素材导出的Adobe XD进行替代。
 
