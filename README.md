@@ -138,16 +138,16 @@ The storyboard workspace is convinient to ensure the consistant design style, an
 
 <img src="/Assets/image/screenshot/xd_storyboard.png" width="600" />
 
-Phase No.2 has included the design of loading page, login page and homepage. The test trail can be found [here(Password:0000)](https://v.youku.com/v_show/id_XNDMwMjI2NjcwMA)。
+Phase No.2 has included the design of loading page, login page and homepage. The test trail is recorded [here(Password:0000)](https://v.youku.com/v_show/id_XNDMwMjI2NjcwMA)。
 
-### 5. 高保真图的导出和一些注意事项
+### 5. Export as resources for software development
 
-Adobe XD支持将工作界面中的元素导出为各种尺寸的图像资源，以Android项目类型为例，可直接将对应尺寸的图像输出至ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi各个文件夹里，开发者可在工程中直接调用。
+Items in Adobe XD workspace can be exported as developer-ready resources. For Android app, resources are exported to ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi directories and are callable in Android project.
 
-导出时需要注意的有：
-- 将需要导出的组件/组件组命名为方便在Android项目中调用的格式，文件名中的特殊字符可能使调用出错。
-- mdpi尺寸的图像以画板尺寸为准，否则容易出现Android项目中图片尺寸和分辨率不匹配，达不到高保真原型的效果。
-- 很多组件外观可以通过Android项目自带素材实现，导出前务必确认导出素材的必要性。
+Things worth noting:
+- Rename the items as Android resource style, Unicode-8 symbol can cause bug in programme
+- Set mdpi resolution as canvas size, otherwise the resolution could become mismatch after exporting.
+- Many items can be made with Android layout, make sure resources exported are necessary.
 
 ### 项目第二阶段小结
 
