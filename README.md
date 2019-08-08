@@ -151,11 +151,11 @@ Things worth noting:
 
 ### Phase No.2 summary
 
-第二阶段的高保真原型制作并没有完全模仿丰收互联App的制作流程，主要原因是因为在个人项目中，制作图形素材耗费时间过多，遵循低保真——高保真——成品的流程制作2至3版素材容易导致项目延期。相对的，制作一版能直接导出为软件开发所需资源的原型，不但能节省时间，还能对开发过程中遇到的问题及时修正。为此，本项目放弃使用Mockplus作为原型设计软件，转为使用具有相似功能，但支持高保真素材导出的Adobe XD进行替代。
+The hi-fi prototyping stage did not follow the 丰收互联app strategy completely. As on creating a personal project, time consumed on making graphic resources could become more than expected. Following the strategy of "low-fi to hi-fi to final product" could potentially delay the project deliverables. However, creating a set of editable graphic resources with express export function, can not only compress the workflow, but also make it possible to establish sanity check on every stage, and fix the problem immediately. Therefore, Mockplus was replaced by Adobe XD in this phase.
 
-## 安卓APP前端开发练习
+## Android App development
 
-本项目中安卓APP包含了多个界面，具体制作流程不一一赘述，此部分将记录一些重要功能的实现，作为开发学习笔记。成品效果详见[演示录像(密码：0000)](https://v.youku.com/v_show/id_XNDMwMjE5OTYzMg)。
+In this project, multiple Android activities were created, each activity required effort on layout editting and the process was very repeatative. Therefore, the detailed brick-stacking workflow will not be stated here. This part will focus on the actuation of some important and challenging functionalities. The final presentation is recorded [here](https://v.youku.com/v_show/id_XNDMwMjE5OTYzMg).
 
 ### 1. 创建项目
 
