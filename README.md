@@ -155,9 +155,9 @@ The hi-fi prototyping stage did not follow the 丰收互联app strategy complete
 
 ## Android App development
 
-In this project, multiple Android activities were created, each activity required effort on layout editting and the process was very repeatative. Therefore, the detailed brick-stacking workflow will not be stated here. This part will focus on the actuation of some important and challenging functionalities. The final presentation is recorded [here](https://v.youku.com/v_show/id_XNDMwMjE5OTYzMg).
+In this project, multiple Android activities were created, each activity required effort on layout editting and the process was very repeatative. Therefore, the detailed brick-stacking workflow will not be stated here. This part will focus on the actuation of some important and challenging functionalities. The final presentation is recorded [here(Password:0000)](https://v.youku.com/v_show/id_XNDMwMjE5OTYzMg).
 
-### 1. 创建项目
+### 1. Project setting
 
 选择SDK版本时一般根据兼容性考虑选择Android 5.0版本，但本项目根据测试机（个人手机）系统版本选择了最新的SDK版本。具体参数：
 - SDK Version: 28(API 28: Android 9.0(Pie))
